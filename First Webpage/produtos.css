@@ -1,0 +1,91 @@
+header {
+    background: #BBBBBB;
+    padding: 20px 0;
+}
+
+.caixa {
+    position: relative; /*faz com que o nav se enquadre dentro da "caixa"*/
+    width: 940px; /*tamanho da res. padrão web é 1280x720, 940px é uma boa margem*/
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0px;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px; /*ordem: 1-topo, 2-direita, 3-baixo e 4-esquerda*/
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none; 
+}
+
+nav a:hover {  /*Quando o mouse está por cima dos links contidos na nav*/
+    color: #C78C19;
+    text-decoration: underline;
+}
+
+.produtos {
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box; /*inclui o tamanho adicionado pelo padding para calcular o 30% de width corretamente */
+    border: 2px solid #000000; /*declaração unificada: tamanho, tipo e cor*/
+    border-radius: 10px; /*os 10px se referem ao raio // podemos estilizar cada canto separadamente*/
+}
+
+.produtos li:hover {
+    border-color: #C78C19;
+}
+
+.produtos li:active {
+    border-color: #088C19;
+}
+
+.produtos li:hover h2 {
+    font-size: 34px;
+}
+
+.produtos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produto-descricao {
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background: url("bg.jpg");
+    padding: 40px 0;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+    margin-top: 20px;
+}
