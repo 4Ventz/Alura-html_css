@@ -1,48 +1,325 @@
-.titulo-principal {
-    padding-left: 20px;
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
-#banner {
+header {
+    background: #BBBBBB;
+    padding: 20px 0;
+}
+
+.caixa {
+    position: relative; /*faz com que o nav se enquadre dentro da "caixa" - Desloca o ponto inicial do objeto*/
+    width: 940px; /*tamanho da res. padrão web é 1280x720, 940px é uma boa margem*/
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute; /*Levanta o ponto inicial da imagem, podemos coloca-la onde quisermos (a imagem fica por cima do texto que está embaixo*/
+    top: 110px;
+    right: 0px;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px; /*ordem: 1-topo, 2-direita, 3-baixo e 4-esquerda*/
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none; 
+}
+
+nav a:hover {  /*Quando o mouse está por cima dos links contidos na nav*/
+    color: #C78C19;
+    text-decoration: underline;
+}
+
+.produtos {
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box; /*inclui o tamanho adicionado pelo padding para calcular o 30% de width corretamente */
+    border: 2px solid #000000; /*declaração unificada: tamanho, tipo e cor*/
+    border-radius: 10px; /*os 10px se referem ao raio // podemos estilizar cada canto separadamente*/
+}
+
+.produtos li:hover {
+    border-color: #C78C19;
+}
+
+.produtos li:active {
+    border-color: #088C19;
+}
+
+.produtos li:hover h2 {
+    font-size: 34px;
+}
+
+.produtos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produto-descricao {
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background: url("imagens/bg.jpg");
+    padding: 40px 0;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+form {
+    margin: 40px 0;
+}
+
+form label, form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padrao {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    background: green;
+    transform: scale(1.2);
+}
+
+table {
+    margin: 20px 0 40px;
+}
+
+thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td,th {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
+
+/* css página inicial */
+.banner {
     width: 100%;
 }
 
-.principal {
-    background-color: #CCCCCC;
-    padding: 30px;
-}
-
-.titulo-centralizado {
+.titulo-index {
     text-align: center;
+    font-size: 2em; /* em é o tamanho proporcional em pixels, isso é, o tamanho da letra será 2x seu tamanho padrão*/
+    margin: 0 0 1em;
+    clear: left;
+   /*color: rgba(0,0,0,0.3); /*RGBA possui a camada "alfa", que é responsável por controlar a opacidade da cor*/
+   /*text-shadow: 2px 2px #FF0000; /*Sombra para o texto*/
+}
+/* Seleções mais específicas:
+
+Primeira Letra:
+.titulo-index::first-letter {
+    font-weight: bold;
 }
 
-p {
-    text-align: center;
-}
-
-#missao {
-    font-size: 20px;
-}
-
-em strong {
-    color: rgb(255,0,0);
-}
-
-.itens {
+Primeira linha:
+p:first-line {
     font-style: italic;
+}
+*/
+.principal {
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.principal p {
+    margin: 0 0 1em;
+}
+
+.principal strong {
+    font-weight: bold;
+}
+
+.principal em {
+    font-style: italic;
+} 
+
+.utensilios {
+    width: 120px;
+    float: left; /*permite que a imagem "flutue" mas sua sombra ainda ocupa espaço na página fazendo com que o texto fique a sua volta*/
+    margin: 0 20px 20px 0;
+}
+
+.mapa {
+    padding: 3em 0;
+    background: linear-gradient(#FEFEFE, #888888); /*primeiro elemento é a inclinação; podemos adicionar quantas cores quisermos*/
+    /*podemos controlar quando inicia o gradiente colando, depois da cor, a porcentegem da página que queremos ocupar, ex: orange 50%, blue, black.*/
+}
+
+.mapa-conteudo {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.mapa p {
+    margin-bottom: 2em;
+    text-align: center;
 }
 
 .beneficios {
-    background-color: #FFFFFF;
-    padding: 20px;
+    padding: 3em 0;
+    background: #888888;
+    /*box-shadow: inset 0 0 30px #FF0000; /*Sombra interna; NÃO é deslocavel, X e Y devem ser 0; O 30px corresponde ao espalhamento da sombra*/
 }
 
-ul {
-    display: inline-block;
+.conteudo-beneficios {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-beneficios {
+    width: 40%;
+    display: inline-block; /*Quando usamos inline-block e queremos usar 100% da largura da página, esses elementos precisam estar colados um ao lado do outro*/
     vertical-align: top;
-    width: 20%;
-    margin-right: 15%;
 }
 
-.imagembeneficios {
-    width: 50%;
+.itens {
+    line-height: 1.5; /*Proporcional ao tamanho da fonte*/
 }
+
+.itens:before {
+    content: "\2605";
+}
+
+.itens:first-child { 
+/*Primeiro elemento*/
+    font-weight: bold;
+}
+    /*Temos tbm as opções: last-child e nth-chield(nº do elemento);
+        Com o nth-child() podemos utilizar: 2n<- elementos pares;
+        Opção first-letter para alterar apenas a primeira letra do titulo*/
+
+.imagem-beneficios {
+    width: 60%;
+    opacity: 1; /*É possivel usar a opacidade em tudo (elementos, cores)*/
+    box-shadow: 10px 10px 10px 0 #000000; /*Eixo X, Eixo Y, blur, intensidade da borda e a cor a ser utilizada; 
+    Podemos adicionar várias sombras*/ 
+}
+
+.imagem-beneficios:hover {
+    opacity: 0.7;
+    transition: 400ms all;
+}
+
+.video {
+    width: 560px;
+    margin: 2em auto;
+}
+
+@media screen and (max-width: 480px) {
+   
+   /*Index=====================================================================*/
+    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+ 
+    .principal {
+        margin: 1em 0.5em;
+        padding: 1em 0;
+    }
+
+    .beneficios {
+        margin-top: -.5em;
+    }
+}
+
+
+
+/* After e Before
+- Cria um espaço onde o CSS pode ser usado antes do elemento, sendo esse não manipulável. Ex:*/
+/*.titulo-index:before {
+    content: "[";
+}
+
+.titulo-index:after {
+    content: "]";
+}
+-Os colchetes não podem ser selecionados com o mouse*/
+
+/*Seleções avançadas CSS:
+
+1) main > p{} --> Seleciona todas as tags p que são filhas diretas da main
+2) img + p{}  --> Selecionar o primeiro irmão depois de um elemento. Img é o elemento ancora e o p é o elemento irmão
+3) img ~ p{} --> Seleciona todos os paragrafos depois da img dentro de uma divisão.
+4) .principal p:not(#missao) {} --> Seleciona todos os paragrafos exceto o especificado
+
+**A ordem dos seletores altera o resultado*/
+
+/*Cálculo CSS:
+Ex: 
+.utensilios {
+    width: calc(40%) --> Calculara de acordo com o tamanho da página a ser exibida (no pc, celular, tablet,etc)
+
+    Podemos realizar operações:
+    1) calc(40% - 26px)
+    2) calc(40% - ((26px*4)/2) --> Encadeando operações*/ 
